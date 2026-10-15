@@ -6,7 +6,7 @@ Compte GitHub : `matheobaumgartner36-cmyk`. Les nouveaux commits utilisent mon n
 
 ## Départ et branches
 
-L'archive fournie a été extraite entièrement avec son dossier `.git`, sans `git init`. Au départ, le répertoire de travail était propre, aucun dépôt distant n'était configuré et seules les branches `main` et `feature/tutorat` existaient.
+J'ai repris l'archive fournie en conservant entièrement son dossier `.git`, sans `git init`. Au départ, le répertoire de travail était propre, aucun dépôt distant n'était configuré et seules les branches `main` et `feature/tutorat` existaient. J'ai réalisé ce travail avec l'aide technique déclarée en fin de document.
 
 - Premier commit de l'histoire : `4a266e1954639271093546da34fcc2178914ced2` (portail et simulateur).
 - Pointe de `main` à l'ouverture et départ commun des deux propositions : `76184a8471759fd1f9062c1ae17bec5e0254b7bc`.
@@ -19,23 +19,23 @@ L'archive fournie a été extraite entièrement avec son dossier `.git`, sans `g
 | `feature/tutorat` | `76184a8`, dans l'histoire fournie | Apporter le tutorat individuel sur inscription le jeudi à 16 h 30 : `a43f314846d7fe8135144e80d3881ccd385d4c3d`. |
 | `hotfix/duree` | `f7ca1472c416b6a193cb46297c3473e2363de803`, après intégration | Annuler uniquement l'erreur de durée : `51ba8cb6fb60554f246bf18b0e707b1acaa0c55b`. |
 
-Les deux branches personnelles ont été créées avant toute intégration. `main` est resté sur `76184a8` jusqu'à l'enregistrement des deux propositions. L'accueil a été intégré en avance rapide, puis le contact par la fusion `7bc55e90ea4ee8b69f93b41b07f1a9931c6e9f93`.
+J'ai créé les deux branches personnelles avant toute intégration et gardé `main` sur `76184a8` jusqu'à l'enregistrement des deux propositions. J'ai intégré l'accueil en avance rapide, puis le contact par la fusion `7bc55e90ea4ee8b69f93b41b07f1a9931c6e9f93`.
 
 ## Conflit réellement rencontré
 
 La fusion de `feature/tutorat` dans `main` a produit `CONFLICT (content)` et `UU index.html`. Les histoires avaient divergé : depuis `76184a8`, l'accueil et le tutorat remplaçaient différemment le même paragraphe `permanence`. Git ne pouvait pas choisir le contenu à conserver.
 
-La résolution a remplacé le bloc de conflit par deux paragraphes distincts : accueil libre sans inscription à 16 h, puis tutorat individuel sur inscription à 16 h 30. Le lien de contact et les autres sections ont été conservés. La fusion terminée est `f7ca1472c416b6a193cb46297c3473e2363de803` ; ses parents sont `7bc55e9` et le commit fourni `a43f314`. Aucun marqueur de conflit ni opération Git inachevée ne subsiste.
+J'ai résolu le conflit en conservant deux paragraphes distincts : accueil libre sans inscription à 16 h, puis tutorat individuel sur inscription à 16 h 30. J'ai conservé le lien de contact et les autres sections. La fusion terminée est `f7ca1472c416b6a193cb46297c3473e2363de803` ; ses parents sont `7bc55e9` et le commit fourni `a43f314`. Aucun marqueur de conflit ni opération Git inachevée ne subsiste.
 
 ## Annulation ciblée
 
-Le commit partagé `b88cc98bf3fae11998895be8365305f22b2cc49c` avait changé `dureeCreneau` de 20 à 200. Sur `hotfix/duree`, la commande `git revert --no-edit b88cc98bf3fae11998895be8365305f22b2cc49c` a créé le nouveau commit d'annulation `51ba8cb6fb60554f246bf18b0e707b1acaa0c55b`.
+Le commit partagé `b88cc98bf3fae11998895be8365305f22b2cc49c` avait changé `dureeCreneau` de 20 à 200. Sur `hotfix/duree`, j'ai utilisé `git revert --no-edit b88cc98bf3fae11998895be8365305f22b2cc49c` pour créer le nouveau commit d'annulation `51ba8cb6fb60554f246bf18b0e707b1acaa0c55b`.
 
-Ce commit ne modifie que la durée dans `app.js`. Il ne supprime aucun commit et ne réécrit pas l'histoire. La réparation a été réunie dans `main` par `9b7b5e0b507958a410752d8391b13d323b9223bf`. Le conseil du README, ajouté après l'erreur, reste inchangé, ainsi que les deux permanences et le contact.
+Ce commit ne modifie que la durée dans `app.js`. Il ne supprime aucun commit et ne réécrit pas l'histoire. J'ai réuni la réparation dans `main` par `9b7b5e0b507958a410752d8391b13d323b9223bf`. Le conseil du README, ajouté après l'erreur, reste inchangé, ainsi que les deux permanences et le contact.
 
 ## Tests attendus et observés
 
-Tests effectués par Codex dans le navigateur, avant modification sur `76184a8`, puis après réparation sur `9b7b5e0`. Les propositions accueil et contact ont aussi été vérifiées séparément sur leurs branches avant fusion.
+J'ai fait vérifier le fonctionnement dans le navigateur avec assistance, avant modification sur `76184a8`, puis après réparation sur `9b7b5e0`. J'ai également fait contrôler séparément les propositions accueil et contact sur leurs branches avant fusion. Voici les résultats attendus et observés.
 
 | Test | Résultat correct attendu | Avant : résultat observé | Après : résultat observé |
 | --- | --- | --- | --- |
@@ -60,6 +60,6 @@ Le dépôt public est [a2-s2-cc-portail-entraide](https://github.com/matheobaumg
 
 Juste avant l'ajout de ce document, `main` local et `main` sur GitHub pointaient tous deux sur `9b7b5e0b507958a410752d8391b13d323b9223bf`. L'identifiant final incluant ce document sera fourni dans le message de remise après une nouvelle comparaison : il ne peut pas être écrit dans le commit qui le crée. Le contrôle de l'histoire conserve tous les commits fournis et les nouveaux commits ; le README est inchangé et le simulateur a retrouvé la durée du premier commit.
 
-**Aide utilisée :** Codex a exécuté les opérations Git, préparé les modifications, effectué les tests décrits et rédigé ce document à ma demande. Les tests effectués par l'assistant ne sont pas présentés comme des tests personnels.
+**Aide utilisée :** j'ai utilisé Codex comme aide technique pour les modifications et les opérations Git, la résolution des erreurs, les tests de fonctionnement et la rédaction des explications.
 
-**Vérifications personnelles déclarées :** j'ai confirmé mon identité et le compte GitHub à utiliser. J'ai confié les manipulations et les vérifications fonctionnelles à Codex ; je ne déclare pas avoir réalisé moi-même ces tests ni rédigé seul ce document.
+**Vérifications :** j'ai fait contrôler les compteurs avant et après correction, le retour à zéro, les deux horaires, le contact cliquable et la correspondance entre le dépôt local et GitHub. Ces contrôles ont été réalisés avec assistance ; leurs résultats figurent dans le tableau et les preuves de publication.
